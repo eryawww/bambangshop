@@ -107,3 +107,16 @@ Jika hanya menggunakan Model, program akan lebih kompleks menurunkan maintainabi
 Postman adalah tool yang membantu saya mendebug dan memantau implementasi saya. GUI friendly dari postman adalah kelebihan utamanya. Kemampuan postman untuk export dan import yang baru saya pelajari memungkinkan kita untuk mengirimkan testing dengan cepat. Selain itu, pemahaman struktur API juga dapat lebih cepat dimengerti dengan fitur ini.
 
 #### Reflection Publisher-3
+
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+Jenis observer yang digunakan pada tutorial kali ini adalah push. Hal ini terlihat dari publisher sebagai pemeran aktif yang mengirim data kepada para penggunannya.
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+Keuntungan menggunakan pull dari Observer adaah mengurangi keterkaitan antara pengamat dan subjek, memungkinkan fleksibilitas lebih. Kekurangannya adalah dapat menyebabkan peningkatan kompleksitas yang lebih dalam mengelola observer.
+
+
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+Akan menghilangkan sifat real-time dikarenakan proses notifikasi yang dilakukan satu persatu. Efek ini akan terlihat jelas jika jumlah pengamat dalam jumlah sangat besar.
