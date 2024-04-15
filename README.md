@@ -78,6 +78,20 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-1
 
+1. In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or trait in Rust) in this BambangShop case, or a single Model struct is enough?
+
+Sistem desain observer berfokus pada desain komunikasi antara publisher (pemilik data) kepada observers (tertarik kepada data). Observer memiliki 2 jenis model Push Model dan Pull Model. Push Model adalah jenis dimana publisher aktif mengirim data kepada observer yang diam sedangkan Pull Model adalah jenis dimana observer aktif meminta data kepada publisher yang hanya mengirim ketika diminta. Push berguna untuk komunikasi real-time sedangkan pull bergunda untuk informasi yang bersifat on-demand.
+
+Interface digunakan untuk mengeneralisasi komunikasi publisher dan observer agar konsisten dan mudah dikembangkan jika nantinya akan diperlukan banyak fitur yang ingin berkomunikasi. Namun, untuk kasus bambang ini jika hanya fitur subscribe yang ingin berkomunikasi, maka single model structure sudah cukup mendukung simplisitas, kecepatan implementasi dan pembacaan kode. 
+
+2. id in Program and url in Subscriber is intended to be unique. Explain based on your understanding, is using Vec (list) sufficient or using DashMap (map/dictionary) like we currently use is necessary for this case?
+
+Jika data disimpan pada vektor atau list maka id dari subscriber mungkin bersifat duplikat. Penggunaan DashMap membuat kita menyimpan pasangan product_type dengan subscriber secara efisien dan konsisten dikarenakan key dari DashMap yang harus unik. 
+
+3. When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers (SUBSCRIBERS) static variable, we used the DashMap external library for thread safe HashMap. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
+
+Penggunaan variabel mutable global seperti subscriber pada desain sistem observer adalah alasan yang paling kuat untuk menggunakan DashMap. DashMap didesain khusus untuk mendukung konkurensi tiggi dengan dukungan read dan update. Penggunaan DashMap sudah didukung dengan fleksibilitas dan thread safe yang tidak membuat kita berpikir ulang pada kasus konkurensi.
+
 #### Reflection Publisher-2
 
 #### Reflection Publisher-3
