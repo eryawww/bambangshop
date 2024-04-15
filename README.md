@@ -94,4 +94,16 @@ Penggunaan variabel mutable global seperti subscriber pada desain sistem observe
 
 #### Reflection Publisher-2
 
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+
+Beberapa alasan dibalik pemisahan service dan repository adalah dengan tujuan meningkatkan maintainability. Beberapa aspek yang mendukung maintainability akibar pemisahan ini antara lain adalah mendukugn Single Responsibility Principle, mempermudah testing, meningkatkan reusability, dan meningkatkan modularity sehingga mudah lebih mudah dibaca.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+Jika hanya menggunakan Model, program akan lebih kompleks menurunkan maintainability. Jiak semua logika bisnis, database, dan komunikasi dilakukan pada satu layer yang sama, maka implementasi yang kita buat akan memiliki potensi untuk deppenden. Perubahan kecil dapat memaksa untuk melakukan perubahan ke semuanya (Shotgun Surgery). Testing juga akan sangat ribet dan berpotensi untuk berubah-ubah setiap pembaruan.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+Postman adalah tool yang membantu saya mendebug dan memantau implementasi saya. GUI friendly dari postman adalah kelebihan utamanya. Kemampuan postman untuk export dan import yang baru saya pelajari memungkinkan kita untuk mengirimkan testing dengan cepat. Selain itu, pemahaman struktur API juga dapat lebih cepat dimengerti dengan fitur ini.
+
 #### Reflection Publisher-3
